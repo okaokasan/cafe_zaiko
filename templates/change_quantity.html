@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数量変更</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container my-3">
+        <h2>数量変更</h2>
+        <form action="/quantity_change/{{ product.product_id }}" method="post">
+            <div class="form-group">
+                <label for="quantity">数量:</label>
+                <input type="number" name="quantity" id="quantity" class="form-control" value="{{ product.quantity }}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">更新</button>
+        </form>
+    </div>
+</body>
+</html>
